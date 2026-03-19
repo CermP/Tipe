@@ -1,0 +1,219 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+
+\definecolor{NavyTIPE}{RGB}{0,42,92}
+\definecolor{CyanTIPE}{RGB}{0,160,200}
+\definecolor{LightCyan}{RGB}{220,244,252}
+
+\setbeamercolor{palette primary}   {bg=NavyTIPE, fg=white}
+\setbeamercolor{palette secondary} {bg=CyanTIPE, fg=white}
+\setbeamercolor{palette tertiary}  {bg=NavyTIPE, fg=white}
+\setbeamercolor{palette quaternary}{bg=NavyTIPE, fg=white}
+\setbeamercolor{structure}{fg=NavyTIPE}
+\setbeamercolor{title}{fg=white, bg=NavyTIPE}
+\setbeamercolor{frametitle}{fg=white, bg=NavyTIPE}
+\setbeamercolor{block title}{bg=CyanTIPE, fg=white}
+\setbeamercolor{block body}{bg=LightCyan, fg=black}
+\setbeamercolor{alerted text}{fg=CyanTIPE}
+
+\setbeamertemplate{bibliography item}{}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{csquotes}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{colortbl}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing, decorations.markings,
+decorations.pathreplacing, patterns, calc, positioning, shapes.geometric}
+
+\title[TIPE]{%
+  Influence de la rigidité d'une hélice de drone\\
+sur l'efficacité propulsive}
+\subtitle{Oral d'avancement}
+\author{Merlin Claret}
+\institute{PTSI — Lycée la Martinière Monplaisir, Lyon}
+\date{20 mars 2026}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Plan}
+  \tableofcontents
+\end{frame}
+
+\section{Contexte et lien au thème}
+
+\begin{frame}{Contexte et enjeux}
+  \begin{itemize}
+    \item Les drones ont de nombreuses applications : applications
+      civiles, industrielles et de loisir.
+    \item L’impression 3D permet de fabriquer rapidement des pièces
+      sur mesure. Les \alert{paramètres d'impression affectent la rigidité} (Palmer \& Laliberté, 2023).
+    \item Cependant, les \alert{hélices FDM (Impression 3D) se déforment significativement}
+      (Zhu et al., 2021) sous charge aérodynamique.
+    \item Cette déformation nuit-elle réellement
+      à l'efficacité propulsive~?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Lien avec « Optimisation, Sobriété, Efficacité »}
+  \begin{description}[\textbf{Optimisation}]
+    \item[\textcolor{NavyTIPE}{Sobriété}]
+      Limiter la masse de matière (épaisseur, remplissage, choix du
+      polymère).
+    \item[\textcolor{NavyTIPE}{Efficacité}]
+      Maximiser le rapport poussée\,/\,puissance en tenant
+      compte de la \alert{déformation aéroélastique}.
+    \item[\textcolor{NavyTIPE}{Optimisation}]
+      Recherche d'un \alert{compromis de rigidité} — ni trop souple
+      (perte aérodynamique), ni trop rigide (surcoût matière).
+  \end{description}
+\end{frame}
+
+\section{Problématique}
+
+\begin{frame}{Formulation de la problématique}
+  \begin{block}{Problématique}
+    \textit{Quelle est l'influence du module d'Young effectif d'une hélice de
+      drone imprimée en 3D sur sa déformation en rotation et sur la perte
+    d'efficacité propulsive~?}
+  \end{block}
+
+  \vspace{0.2cm}
+
+  \begin{itemize}
+    \item Comparaison de plusieurs matériaux (PLA, PETG, composites)
+      et de methodes d'impression.
+    \item
+      \alert{rigidité mesurée} $\;\rightarrow\;$
+      \alert{déformation en rotation} $\;\rightarrow\;$
+      \alert{variation de poussée}.
+  \end{itemize}
+\end{frame}
+
+\section{Pistes de modélisation}
+
+\begin{frame}{Modélisation du comportement de l'hélice}
+  \textbf{\textcolor{NavyTIPE}{Aspect mécanique (Flexion)}}
+  \begin{itemize}
+    \item Assimilation de la pale à une poutre encastrée.
+    \item \alert{Déformation mécanique de la pale} conditionnée par la rigidité du matériau (Zhu et al., 2021).
+    \item Plus l'hélice est souple, plus elle fléchit sous la charge de l'air.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \textbf{\textcolor{NavyTIPE}{Aspect aérodynamique (Portance)}}
+  \begin{itemize}
+    \item La flexion de la pale modifie son angle d'attaque.
+    \item Conséquence directe : la portance et la traînée locales changent.
+    \item But : mesurer l'écart de performance.
+  \end{itemize}
+
+  \vspace{0.4cm}
+  \begin{block}{Stratégie de modélisation}
+    Observer l'interaction entre les forces de l'air et les déformations. \\
+    \textit{On peut utiliser le modèle de poutre encastrée d'Euler--Bernoulli pour prédire la déformation, et le valider expérimentalement.}
+  \end{block}
+\end{frame}
+
+\section{Piste démarche expérimentale}
+
+\begin{frame}{Mesure de la rigidité des hélices}
+  \begin{itemize}
+    \item Impression d'éprouvettes avec des \alert{paramètres de remplissage identiques} à ceux des hélices.
+    \item \alert{Mesure du module d'Young en traction} pour déterminer la rigidité de l'impression.
+  \end{itemize}
+  \vspace{0.4cm}
+
+  \begin{block}{But de la manipulation}
+    Ne pas se fier uniquement au données du matériau, mais obtenir la rigidité de la configuration réelle d'impression pour l'associer ensuite à la déformation de l'hélice en vol.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Banc de poussée et déformation}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item Montage : moteur + hélice sur un \alert{banc de poussée}.
+      \item Instrumentation prévue :
+        \begin{itemize}
+          \item Balance (mesure de la poussée)
+          \item Tachymètre (mesure du régime RPM)
+          \item Caméra rapide (suivi de la déformation de l'hélice)
+        \end{itemize}
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.8, every node/.style={transform shape}]
+      % Table / Support
+      \draw[thick] (-0.5, 0) -- (4.5, 0);
+      \fill[pattern=north east lines] (-0.5, -0.3) rectangle (4.5, 0);
+
+      % Balance
+      \draw[thick, fill=CyanTIPE!20] (1.5, 0) rectangle (2.5, 0.5) node[midway] {\footnotesize Balance};
+
+      % Support moteur
+      \draw[thick, fill=gray!20] (1.8, 0.5) rectangle (2.2, 2.5);
+
+      % Moteur
+      \draw[thick, fill=NavyTIPE!80] (1.6, 2.5) rectangle (2.4, 3) node[midway, white] {\footnotesize Moteur};
+
+      % Hélice
+      \draw[thick, fill=CyanTIPE] (0.5, 3) ellipse (1.5cm and 0.1cm);
+      \node[above] at (0.5, 3.1) {\footnotesize Hélice};
+
+      % Flux d'air
+      \draw[->, thick, CyanTIPE, dashed] (0.8, 3.5) -- (0.8, 4.2);
+      \draw[->, thick, CyanTIPE, dashed] (1.5, 3.5) -- (1.5, 4.2);
+      \node[right, CyanTIPE] at (1.5, 3.8) {\footnotesize Poussée};
+
+      % Caméra
+      \node[draw, thick, fill=gray!30, minimum width=0.8cm, minimum height=0.5cm] (cam) at (-1, 2.5) {};
+      \draw[thick] (-0.6, 2.5) -- (-0.3, 2.7) -- (-0.3, 2.3) -- cycle;
+      \node[below] at (-1, 2.2) {\footnotesize Caméra};
+      \draw[dashed, gray] (-0.3, 2.7) -- (1.5, 3.2);
+      \draw[dashed, gray] (-0.3, 2.3) -- (1.5, 2.8);
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Suivi visuel de l'hélice}
+  \begin{itemize}
+    \item Observation de la pale de \alert{profil} pendant la rotation.
+    \item Utilisation de marques sur le bout de l'hélice pour repérer sa position.
+    \item Pointage depuis la vidéo pour \alert{estimer la flexion} subie par la pale.
+    \item Obtenir une preuve directe que l'hélice se plie, et mettre ce pliage en relation avec la poussée.
+  \end{itemize}
+\end{frame}
+
+\section{Références}
+
+\begin{frame}[allowframebreaks]{Références}
+  \small
+  \begin{thebibliography}{99}
+
+    \bibitem{Palmer2025}
+    Palmer, M., \& Laliberté, J. (2023). Effects of non-planar slicing techniques and carbon fibre material additives on the mechanical properties of 3D-printed drone propellers. \textit{Drone Systems and Applications}, \textit{11}.
+
+    \bibitem{AerodynamicUAV}
+    Zhu, H., Jiang, Z., Zhao, H., Pei, S., Li, H., \& Lan, Y. (2021). Aerodynamic performance of propellers for multirotor unmanned aerial vehicles: Measurement, analysis, and experiment. \textit{Shock and Vibration}, \textit{2021}.
+
+    \bibitem{Forest2022}
+    Forest, S., \& Amestoy, M. (2022). \textit{Mécanique des milieux continus. Volume 2, Pratique}. Presses des Mines.
+
+  \end{thebibliography}
+\end{frame}
+
+\end{document}

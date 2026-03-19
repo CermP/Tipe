@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# LaTeX compilation files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.toc
+*.vrb
+*.synctex.gz
+*.synctex(busy)
