@@ -1,6 +1,8 @@
 # Tipe
 Ce repository a pour but de suivre  le déroulement de mon TIPE.
 
+[Journal de bord](journalDeBord.md)
+
 #### Voici la présentation des premières recherches effectuées :
 - [Présentation TIPE (PDF)](presentation/tipe-presentation.pdf)
 

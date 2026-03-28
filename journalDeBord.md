@@ -28,6 +28,14 @@ Sujet intéressant : hélices de drone.
 
  -> Je selectionne le dernier point, il semble le plus intéressant et le plus réalisable dans le cadre du TIPE.
 
+## 20/03/2026
+
 [Présentation TIPE (PDF)](presentation/tipe-presentation.pdf)
 
 [Articles que j'ai consultés](bibliographie.md)
+
+## 27/03/2026
+
+[Compte rendu](presentation/compte-rendu.md)
+
+[Explication simplifiée de la "Blade Element Theory"](bladeElementTheory.md)
