@@ -27,7 +27,8 @@ Références qui peuvent m'être utiles :
 
 
 
-#### Zhu, H., Jiang, Z., Zhao, H., Pei, S., Li, H., & Lan, Y. (2021). Aerodynamic performance of propellers for multirotor unmanned aerial vehicles: Measurement, analysis, and experiment. *Shock and Vibration*, *2021*, 9538647. 
+#### Zhu, H., Jiang, Z., Zhao, H., Pei, S., Li, H., & Lan, Y. (2021). Aerodynamic performance of propellers for multirotor unmanned aerial vehicles: Measurement, analysis, and experiment. *Shock and Vibration*, *2021*, 9538647.
+
 
 - Ici ils montrent que la déformation des pales peut améliorer le rendement. 
 - On pourra peut être observer sur les résultats que la déformation de la pale en vol améliore le rendement dans une certaine mesure.
